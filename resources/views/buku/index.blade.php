@@ -1,11 +1,16 @@
-<h1>Daftar Buku</h1>
+@extends('layouts.app')
+@section('title', 'Daftar Buku')
 
-<ul>
-    @foreach ($daftarBuku as $buku)
-        <li>
-            <a href="{{ route('buku.show', $buku['id']) }}">
-                {{ $buku['judul'] }}
-            </a>
-        </li>
-    @endforeach
-</ul>
+@section('content')
+    <h1>Daftar Buku</h1>
+    <ul class="list">
+        @foreach ($daftarBuku as $buku)
+            <li>
+                <a href="{{ route('buku.show', $buku['id']) }}">
+                    <span>{{ $buku['judul'] }}</span>
+                    <span class="arrow">→</span>
+                </a>
+            </li>
+        @endforeach
+    </ul>
+@endsection
